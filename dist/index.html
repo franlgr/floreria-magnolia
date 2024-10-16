@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MultiShop - Online Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">   -->
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Edu+AU+VIC+WA+NT+Hand:wght@500&family=Parisienne&display=swap" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <style>
+
+body {
+    font-family: "Edu AU VIC WA NT Hand";
+  /* font-optical-sizing: auto; */
+  font-weight: 500;
+  font-style: normal;
+
+}
+        /* Icono del carrito */
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999; /* Siempre al frente */
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.dropdown-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #333;
+  }
+
+  .dropdown {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown:focus {
+    border-color: #888;
+  }
+
+  .dropdown:hover {
+    border-color: #555;
+  }
+
+  .button-add {
+        display: none; /* Ejemplo de cambio de fondo */
+    }
+
+    .logo-mobile{
+        display: none;
+    }
+
+  @media (max-width: 780px) {
+    /* Estilos para dispositivos con un ancho máximo de 780px */
+    .button-add {
+        display: block;
+        background: #3D464D;
+        color: gainsboro;
+        border: solid 2px black;
+        cursor: pointer;
+        margin: 10px;
+    }
+    .logo-mobile{
+        display: block;
+    }
+    .text-carrito-mobile{
+        display: none;
+    }
+}
+    </style>
+
+        <!-- Topbar Start -->
+        <div class="container-fluid">
+            <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+                <div class="col-lg-4">
+                    <a href="" class="text-decoration-none" style="font-size: 30px;">
+                        <!-- <span class="h1 text-uppercase text-primary bg-success px-2">Florería</span>
+                        <span class="h1 text-uppercase text-dark bg-pink px-2 ml-n1">Magnolia</span> -->
+                        <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
+                      Magnolia tu florería
+                    </a>
+                </div>
+                <div class="col-lg-4 col-6 text-left">
+    
+                </div>
+                <div class="col-lg-4 col-6 d-flex align-items-center">
+                    <a class="btn btn-square m-5" target="_blank" href="https://instagram.com/magnolia.florece">
+                        <img style="width: 50px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
+                    </a>
+                    <a target="_blank" href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
+                        <img style="width: 50px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div class="logo-mobile col-lg-4">
+            <a href="" class="text-decoration-none" style="font-size: 20px;">
+                <!-- <span class="h1 text-uppercase text-primary bg-success px-2">Florería</span>
+                <span class="h1 text-uppercase text-dark bg-pink px-2 ml-n1">Magnolia</span> -->
+                <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
+              Magnolia tu florería
+            </a>
+        </div>
+        <!-- Topbar End -->
+
+<div class="cart-icon" style="display: flex; justify-content: end; align-items: center; width: 100%;">
+    <div>
+      <p class="text-carrito-mobile" style="margin: 0;">Ver pedido</p>
+    </div>
+    <a href="/cart.html">
+      <img src="https://www.svgrepo.com/show/528101/cart-2.svg" alt="Carrito de compras" style="width: 50px;">
+    </a>
+  </div>
+  
+
+    <!-- Products Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <h4 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Personaliza tu ramo</span></h4>
+        <div class="row px-xl-5">
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img style="width: 325px; height: 424px;" class="img-fluid w-100" src="img/rosa.jpg" alt="">
+                        <div class="product-action">
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a> -->
+                            <a onclick="agregarRosa()" class="btn btn-outline-dark" style="width: 200px;">AGREGAR AL PEDIDO</a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <div class="button-add">
+                            <a onclick="agregarRosa()" class="" >AGREGAR AL PEDIDO</a>
+                        </div>
+                       <a class="h6 text-decoration-none text-truncate" href="">Rosas</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$2.000,00</h5><h6 class="text-muted ml-2"></h6>
+                        </div>
+                        <div class="dropdown-wrapper d-flex align-items-center justify-content-center mb-1">
+                            <div class="dropdown-container">
+                              <label for="colorSelect" class="dropdown-label">Seleccionar color:</label>
+                              <select id="colorSelectRosa" class="dropdown">
+                                <option value="rosa">Rosa</option>
+                                <option value="rojo">Rojo</option>
+                                <option value="amarillo">Amarillo</option>
+                                <option value="blanco">Blanco</option>
+                              </select>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img style="width: 325px; height: 424px;" class="img-fluid w-100" src="img/san-vicente.jpg" alt="">
+                        <div class="product-action">
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a> -->
+                            <a onclick="agregarSanVicente()" class="btn btn-outline-dark" style="width: 200px;">AGREGAR AL PEDIDO</a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <div class="button-add">
+                            <a onclick="agregarSanVicente()">AGREGAR AL PEDIDO</a>
+                        </div>
+                        <a class="h6 text-decoration-none text-truncate" href="">San Vicente</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$1.000,00</h5><h6 class="text-muted ml-2"></h6>
+                        </div>
+                        <div class="dropdown-wrapper d-flex align-items-center justify-content-center mb-1">
+                            <div class="dropdown-container">
+                              <label for="colorSelect" class="dropdown-label">Seleccionar color:</label>
+                              <select id="colorSelectSanVicente" class="dropdown">
+                                <option value="rosa">Rosa</option>
+                                <option value="lila">Lila</option>
+                                <option value="amarillo">Amarillo</option>
+                                <option value="violeta">Violeta</option>
+                              </select>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img style="width: 325px; height: 424px;" class="img-fluid w-100" src="img/astromelias.jpg" alt="">
+                        <div class="product-action">
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a> -->
+                            <a onclick="agregarAstromelia()" class="btn btn-outline-dark" style="width: 200px;">AGREGAR AL PEDIDO</a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <div class="button-add">
+                            <a onclick="agregarAstromelia()">AGREGAR AL PEDIDO</a>
+                        </div>
+                        <a class="h6 text-decoration-none text-truncate" href="">Astromelias</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$1.000,00</h5><h6 class="text-muted ml-2"></h6>
+                        </div>
+                        <div class="dropdown-wrapper d-flex align-items-center justify-content-center mb-1">
+                            <div class="dropdown-container">
+                              <label for="colorSelect" class="dropdown-label">Seleccionar color:</label>
+                              <select id="colorSelectAstromelia" class="dropdown">
+                                <option value="rosa">Rosa</option>
+                                <option value="violeta">Violeta</option>
+                                <option value="naranja">Naranja</option>
+                                <option value="amarillo">Amarillo</option>
+                                <option value="azul">Azul</option>
+                                <option value="blanco con rosa">Blanco con rosa</option>
+                              </select>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                <div class="product-item bg-light mb-4">
+                    <div class="product-img position-relative overflow-hidden">
+                        <img style="width: 325px; height: 424px;" class="img-fluid w-100" src="img/girasol.jpg" alt="">
+                        <div class="product-action">
+                            <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a> -->
+                            <a onclick="agregarGirasol()" class="btn btn-outline-dark" style="width: 200px;">AGREGAR AL PEDIDO</a>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <div class="button-add">
+                            <a onclick="agregarGirasol()" >AGREGAR AL PEDIDO</a>
+                        </div>
+                        <a class="h6 text-decoration-none text-truncate" href="">GIRASOL</a>
+                        <div class="d-flex align-items-center justify-content-center mt-2">
+                            <h5>$3.000,00</h5><h6 class="text-muted ml-2"></h6>
+                        </div>
+                        <div class="dropdown-wrapper d-flex align-items-center justify-content-center mb-1">
+                            <div class="dropdown-container">
+                              <label for="colorSelect" class="dropdown-label">Seleccionar color:</label>
+                              <select disabled id="colorSelect" class="dropdown">
+                                <option value="amarillo">Amarillo</option>
+                                
+                              </select>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Footer Start -->
+
+
+    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Contáctanos</h5>
+                <p class="mb-4"> Un abrazo de naturaleza al corazón.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>1827 Neuquén Buenos Aires, Cdad. Autónoma de Buenos Aires</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>magnolia.tu.floreria@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+54 11 71826432
+                </p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+
+                <style>
+                    footer iframe {
+                        width: 190%;
+                        height: 250px;
+                   }
+
+                   @media (max-width: 780px) {
+                    /* Estilos para dispositivos con un ancho máximo de 780px */
+                    footer iframe {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+
+                </style>
+<footer>
+    <div class="footer-content">
+        <h3>Encuéntranos aquí:</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1729099883883!6m8!1m7!1s0Jaz1nc_VOzh0TGZOoPB3Q!2m2!1d-34.61598236161416!2d-58.45887938067453!3f188.65952450420184!4f-3.382048004979012!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</footer>
+                    </div>
+                    <div class="col-md-4 mb-5">
+
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <!-- <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                        <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p> -->
+                        <form action="">
+                            <!-- <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Your Email Address">
+                                <div class="input-group-append">
+                           
+                                </div>
+                            </div> -->
+                        </form>
+                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Síguenos en Instagram</h6>
+                        <div class="d-flex">
+                            <!-- <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                            <a class="btn btn-square" _blank target="_blank" href="https://instagram.com/magnolia.florece">
+                                <img style="width: 30px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
+                            </a>
+                            <a href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
+                                <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-secondary">
+                    &copy; <a class="text-primary" href="#">floreria-magnolia.picai.app</a>. All Rights Reserved. Designed
+                    by 
+                    <a class="text-primary" href="#">ARMORTEMPLATE.COM</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="img/payments.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="./cart.js"></script>
+</body>
+
+</html>
