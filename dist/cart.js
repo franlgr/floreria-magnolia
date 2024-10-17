@@ -1,6 +1,7 @@
 
 
     function agregarRosa() {
+        
         // Obtener el carrito actual del localStorage (o un array vacío si no existe)
         const colorSeleccionado = document.getElementById('colorSelectRosa').value || 'rojo'; 
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];

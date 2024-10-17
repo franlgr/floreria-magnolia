@@ -42,32 +42,66 @@
 
 <body>
     
-        <!-- Topbar Start -->
-        <div class="container-fluid">
-            <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-                <div class="col-lg-4">
-                    <a href="" class="text-decoration-none" style="font-size: 30px;">
-                        <!-- <span class="h1 text-uppercase text-primary bg-success px-2">Florería</span>
-                        <span class="h1 text-uppercase text-dark bg-pink px-2 ml-n1">Magnolia</span> -->
-                        <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
-                      Magnolia tu florería
-                    </a>
-                </div>
-                <div class="col-lg-4 col-6 text-left">
-    
-                </div>
-                <div class="col-lg-4 col-6 d-flex align-items-center">
-                    <a class="btn btn-square m-5" target="_blank" href="https://instagram.com/magnolia.florece">
-                        <img style="width: 50px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
-                    </a>
-                    <a target="_blank" href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
-                        <img style="width: 50px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
-                    </a>
-                </div>
-                
-            </div>
+<!-- Topbar Start -->
+<div class="container-fluid">
+    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="/" class="text-decoration-none" style="font-size: 30px;">
+                <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
+                Magnolia tu florería
+            </a>
         </div>
-        <!-- Topbar End -->
+        <div class="col-lg-4 col-6 text-left"></div>
+        <div class="col-lg-4 col-6 d-flex flex-column align-items-end">
+            <div class="d-flex align-items-center">
+                <a class="btn btn-square mx-2" target="_blank" href="https://instagram.com/magnolia.florece">
+                    <img style="width: 30px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
+                </a>
+                <a target="_blank" href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
+                    <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
+                </a>
+            </div>
+            <span class="text-right mt-2" style="font-size: 14px;">
+                1827 Neuquén Buenos Aires, Cdad. Autónoma de Buenos Aires
+            </span>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<div class="logo-mobile col-lg-4">
+    <a href="/" class="text-decoration-none" style="font-size: 20px;">
+        <!-- <span class="h1 text-uppercase text-primary bg-success px-2">Florería</span>
+        <span class="h1 text-uppercase text-dark bg-pink px-2 ml-n1">Magnolia</span> -->
+        <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
+      Magnolia tu florería
+    </a>
+</div>
+
+<style>
+        .logo-mobile{
+        display: none;
+    }
+
+  @media (max-width: 780px) {
+    /* Estilos para dispositivos con un ancho máximo de 780px */
+    .button-add {
+        display: block;
+        background: #3D464D;
+        color: gainsboro;
+        border: solid 2px black;
+        cursor: pointer;
+        margin: 10px;
+    }
+    .logo-mobile{
+        display: block;
+    }
+    .text-carrito-mobile{
+        display: none;
+    }
+}
+</style>
+
 
 
     <!-- Breadcrumb Start -->
@@ -155,7 +189,7 @@
                         </div>
                         <button id="checkoutBtn" class="btn btn-block btn-success font-weight-bold my-3 py-2">
                             <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
-                            Ordenar Pedido</button>
+                            Iniciar Compra</button>
                     </div>
                 </div>
             </div>
@@ -283,7 +317,7 @@ total += subtotal;
 
 mensaje += `Total: $${total}\n\nMuchas gracias! Espero aquí para más instrucciones.`;
 
-const numeroWhatsApp = "5491127786432";
+const numeroWhatsApp = "541171826432";//https://wa.me/541171826432
 const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
 
 // Abrir la URL de WhatsApp
