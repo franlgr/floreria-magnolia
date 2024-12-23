@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name www.plancheto.com plancheto.com;
+    server_name plancheto.com;
 
     location / {
         proxy_set_header Upgrade $http_upgrade;
