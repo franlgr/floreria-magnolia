@@ -1,28 +1,28 @@
 
 
-    function agregarRosa() {
+    function agregarPlancha() {
         
         // Obtener el carrito actual del localStorage (o un array vacío si no existe)
-        const colorSeleccionado = document.getElementById('colorSelectRosa').value || 'rojo'; 
+        // const selectCantidad = document.getElementById('select-quantity').value || 1; 
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
         const producto = {
-            imagen: './img/rosa.jpg', // Imagen de ejemplo
-            titulo: 'Rosa',
-            color: colorSeleccionado,
-            precio: 2000,
+            imagen: 'https://res.cloudinary.com/dnrtz69wd/image/upload/v1733792849/dkikmyqwkmuvultpfdca.png', // Imagen de ejemplo
+            titulo: 'Plancha + Kit Burger',
+            // color: colorSeleccionado,
+            precio: 78000,
             cantidad: 1,
           };
 
         // Buscar si el producto ya existe en el carrito (basado en su título y color)
         const productoExistente = carrito.find(
-            (item) => item.titulo === producto.titulo && item.color === producto.color
+            (item) => item.titulo === producto.titulo
         );
 
         if (productoExistente) {
             // Si el producto ya está en el carrito, aumentamos la cantidad
-            productoExistente.cantidad += producto.cantidad;
-            productoExistente.precio += producto.precio;
+            productoExistente.cantidad + producto.cantidad;
+            productoExistente.precio + producto.precio;
         } else {
             // Si no existe, lo agregamos al carrito
             carrito.push(producto);
@@ -30,6 +30,7 @@
 
         // Guardar el carrito actualizado en localStorage
         localStorage.setItem('carrito', JSON.stringify(carrito));
+        window.location.href= '/cart.html'
 
         // alert('Producto agregado al carrito');
         }

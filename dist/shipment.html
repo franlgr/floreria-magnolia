@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MultiShop - Online Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">   -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Edu+AU+VIC+WA+NT+Hand:wght@500&family=Parisienne&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        body {
+    font-family: "Edu AU VIC WA NT Hand";
+  /* font-optical-sizing: auto; */
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+@import url("https://rsms.me/inter/inter.css");
+
+:root {
+  --color-gray: #737888;
+  --color-lighter-gray: #e3e5ed;
+  --color-light-gray: #f7f7fa;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--color-gray);
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-light-gray);
+  border: 0;
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 40rem;
+  padding: 10vw 2rem 0;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-lighter-gray);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.field__label {
+  color: var(--color-gray);
+  font-size: 0.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.field__input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.field:focus-within {
+  border-color: #000;
+}
+
+.fields {
+  display: grid;
+  grid-gap: 1rem;
+}
+.fields--2 {
+  grid-template-columns: 1fr 1fr;
+}
+.fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+  background-color: #678570;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: black;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+/* 
+.button-whatsapp {
+  background-color: #678570;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: block;
+  color: black;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+} */
+
+.button:focus-visible {
+  background-color: #333;
+}
+
+    </style>
+</head>
+
+<body>
+    <style>
+    .logo-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: #f8f9fa;
+        border-bottom: 2px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-mobile a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .logo-mobile a img.logo-placeholder {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .logo-mobile .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-mobile .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .logo-mobile .social-icons a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-mobile .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 780px) {
+        /* Estilos para dispositivos móviles */
+        .logo-mobile a img.logo-placeholder {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-mobile a strong {
+            font-size: 18px;
+        }
+
+        .logo-mobile .social-icons a {
+            width: 35px;
+            height: 35px;
+        }
+
+        .logo-mobile .social-icons img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    @media (min-width: 780px) {
+        /* Ajustes específicos para pantallas grandes */
+        .logo-mobile {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+        }
+
+        .logo-mobile a img.logo-placeholder {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-mobile a strong {
+            font-size: 24px;
+        }
+
+        .logo-mobile .social-icons a {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-mobile .social-icons img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+</style>
+
+<div class="logo-mobile">
+    <a href="/" class="text-decoration-none">
+        <img class="logo-placeholder" src="https://via.placeholder.com/50" alt="Logo Placeholder">
+        <strong style="font-size: 20px;">Plan Cheto</strong>
+    </a>
+    <div class="social-icons">
+        <a href="https://instagram.com/magnolia.florece" target="_blank">
+            <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="Instagram">
+        </a>
+        <a href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." target="_blank">
+            <img src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="WhatsApp">
+        </a>
+    </div>
+</div>
+        <!-- Topbar End -->
+
+<style>
+
+  @media (max-width: 780px) {
+    /* Estilos para dispositivos con un ancho máximo de 780px */
+    .button-add {
+        display: block;
+        background: #3D464D;
+        color: gainsboro;
+        border: solid 2px black;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .text-carrito-mobile{
+        display: none;
+    }
+}
+</style>
+
+
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="/">Inicio</a>
+                    <!-- <a class="breadcrumb-item text-dark" href="#">Shop</a> -->
+                    <a class="breadcrumb-item text-dark" href="/cart.html">Carrito</a>
+                    <span class="breadcrumb-item active">Envío</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!--Shipment Form-->
+    <div style="margin-bottom: 400px;" >
+        <div class="container">
+            <h1>Agregar dirección.</h1>
+            <p>Por favor, ingresa los datos de entrega.</p>
+            <div style="color: black;">
+                <input  type="checkbox" name="" id="">
+                Voy a retirar yo.
+            </div>
+            <div style="margin-top: 5px;">
+                <p>Capilla Del Monte, Córdoba.</p>
+            </div>
+            <hr />
+    
+            <div id="form-shipp" class="form">
+              
+            <div class="fields fields--2">
+              <label class="field">
+                <span class="field__label" for="firstname">Nombre</span>
+                <input class="field__input" type="text" id="firstname" />
+              </label>
+              <label class="field">
+                <span class="field__label" for="lastname">Apellido</span>
+                <input class="field__input" type="text" id="lastname" />
+              </label>
+            </div>
+            <label class="field">
+              <span class="field__label" for="address">Dirección y altura</span>
+              <input class="field__input" type="text" id="address" />
+            </label>
+            <label class="field">
+                <span class="field__label" for="address">Número de teléfono</span>
+                <input class="field__input" type="text" id="cel-contact" />
+              </label>
+              <label class="field">
+                <span class="field__label" for="province">Provincia</span>
+                <select class="field__input" id="province">
+                  <option value="">Seleccione una provincia</option>
+                  <option value="Buenos Aires">Buenos Aires</option>
+                  <option value="CABA">Ciudad Autónoma de Buenos Aires</option>
+                  <option value="Catamarca">Catamarca</option>
+                  <option value="Chaco">Chaco</option>
+                  <option value="Chubut">Chubut</option>
+                  <option value="Córdoba">Córdoba</option>
+                  <option value="Corrientes">Corrientes</option>
+                  <option value="Entre Ríos">Entre Ríos</option>
+                  <option value="Formosa">Formosa</option>
+                  <option value="Jujuy">Jujuy</option>
+                  <option value="La Pampa">La Pampa</option>
+                  <option value="La Rioja">La Rioja</option>
+                  <option value="Mendoza">Mendoza</option>
+                  <option value="Misiones">Misiones</option>
+                  <option value="Neuquén">Neuquén</option>
+                  <option value="Río Negro">Río Negro</option>
+                  <option value="Salta">Salta</option>
+                  <option value="San Juan">San Juan</option>
+                  <option value="San Luis">San Luis</option>
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Santa Fe">Santa Fe</option>
+                  <option value="Santiago del Estero">Santiago del Estero</option>
+                  <option value="Tierra del Fuego">Tierra del Fuego</option>
+                  <option value="Tucumán">Tucumán</option>
+                </select>
+              </label>
+            <div class="fields fields--3">
+              <label class="field">
+                <span class="field__label" for="zipcode">Código postal</span>
+                <input class="field__input" type="text" id="zipcode" />
+              </label>
+              <label class="field">
+                <span class="field__label" for="city">Ciudad / Localidad</span>
+                <select class="field__input" id="city" disabled>
+                  <option value=""></option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label" for="city">DNI / ID</span>
+                <input class="field__input" type="text" id="dni" />
+              </label>
+            </div>
+            <label class="field">
+                <span class="field__label" for="address">Agregar una descripción</span>
+                <textarea class="field__input" type="text" id="details" ></textarea>
+              </label>
+              <!-- <div style="margin-top: 5px;">
+                <p>* El envío se abona aparte, completa todos los campos y consulta el costo de envío por   
+                    <a style="color: blue; text-decoration: underline;"  href="#">WhatsApp</a>
+                </p>
+            </div> -->
+            </div>
+            <hr>
+
+            <div style="display: none;" id="buttons-pay">
+            <button class="button">
+                Continuar con 
+            <img style="width: 90px; margin-left: 5px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2019%2F06%2Fmercado-pago-logo.png&f=1&nofb=1&ipt=3564419e92a7ef42baa671ad72b7229198b1407294f53d5c90be72f491656e9c&ipo=images" alt="">
+            </button>
+            <div style="margin-top: 5px;">
+                <p>* Luego de confirmar la compra serás redirigido a whatsapp para coordinar el retiro.</p>
+            </div>
+            <br>
+            <p style="text-align: center;">Ó</p>
+            <br>
+            <button style="padding-bottom: 10px;" class="button">
+                   Transferencia
+            <img style="width: 20px; margin-left: 10px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2015%2F04%2Fwhatsapp-logo-icone.png&f=1&nofb=1&ipt=f059d659e4660559a6b2b9e8706357c343a9cf0a7e05ed496cf6372b91a57e0c&ipo=images" alt="">
+            </button>
+            </div>
+
+            <!-- Botones de generar y calcular -->
+            <div style="margin-top: 20px; text-align: center; margin-bottom: 20px;">
+                <!-- <button id="generate-pdf" class="btn btn-primary" disabled>Generar documento de envío</button> -->
+                <!-- <a id="download-pdf" class="btn btn-secondary" style="display: none; margin-top: 15px;" download="documento-envio.pdf">
+                    Descargar documento
+                </a> -->
+                <a id="button-shippment" class="btn btn-success" style="display: noe; padding-bottom: 10px; margin-top: 15px;"
+                    target="_blank" rel="noopener noreferrer">
+                    <img style="width: 30px; margin-right: 10px" 
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpngimg.com%2Fuploads%2Ffree_shipping%2Ffree_shipping_PNG74.png&f=1&nofb=1&ipt=79449793a13dcda37b63ca7c1eb36364d0ece43906878c77043a9acc1ac1feb7&ipo=images" 
+                        alt="Shipping Icon">
+                    Calcular envío
+                    <img style="width: 20px; margin-left: 10px" 
+                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2015%2F04%2Fwhatsapp-logo-icone.png&f=1&nofb=1&ipt=f059d659e4660559a6b2b9e8706357c343a9cf0a7e05ed496cf6372b91a57e0c&ipo=images" 
+                        alt="WhatsApp Icon">
+                </a>
+            </div>
+          </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const provinceSelect = document.getElementById("province");
+          const citySelect = document.getElementById("city");
+          let localidades = {};
+        
+          provinceSelect.addEventListener("change", async () => {
+            const province = provinceSelect.value;
+        
+            // Limpia las localidades y desactiva el select
+            citySelect.innerHTML = '<option value="">Seleccione una localidad</option>';
+            citySelect.disabled = true;
+        
+            if (province) {
+              // Obtiene las localidades de la API
+              const localidadesData = await fetchLocalidades(province);
+              if (localidadesData) {
+                localidades = localidadesData;
+                populateCitySelect(localidades);
+              }
+            }
+          });
+        
+          async function fetchLocalidades(provincia) {
+            try {
+              const response = await fetch(
+                `https://apis.datos.gob.ar/georef/api/localidades?provincia=${encodeURIComponent(provincia)}&max=5000`
+              );
+              const data = await response.json();
+              return data.localidades.map((loc) => loc.nombre);
+            } catch (error) {
+              console.error("Error al obtener localidades:", error);
+              return [];
+            }
+          }
+        
+          function populateCitySelect(localidades) {
+            citySelect.disabled = false;
+            localidades.forEach((localidad) => {
+              const option = document.createElement("option");
+              option.value = localidad;
+              option.textContent = localidad;
+              citySelect.appendChild(option);
+            });
+          }
+
+          
+        //SHIPPBUTTON
+    const buttonShipment = document.getElementById('button-shippment');
+    const generatePdfButton = document.getElementById('generate-pdf');
+    buttonShipment.addEventListener('click', () => {
+      // Obtén los datos del formulario
+      const firstname = document.getElementById('firstname').value;
+      const lastname = document.getElementById('lastname').value;
+      const address = document.getElementById('address').value;
+      const phone = document.getElementById('cel-contact').value;
+      const province = document.getElementById('province').value;
+      const zipcode = document.getElementById('zipcode').value;
+      const city = document.getElementById('city').value;
+      const dni = document.getElementById('dni').value;
+      const details = document.getElementById('details').value;
+
+      // Obtén los datos del carrito desde localStorage
+      const carrito = JSON.parse(localStorage.getItem('carrito'));
+      const userId = localStorage.getItem('userId');
+
+      if (!carrito || !userId) {
+        alert('No se encontraron datos del carrito o usuario. Por favor, verifica.');
+        return;
+      }
+
+      // Genera el mensaje
+      const mensaje = `Hola, me comunico a través de la página de www.plancheto.com para calcular el costo de envío con los siguientes detalles:%0A%0A` +
+        `*Emisor:* ${firstname} ${lastname}%0A` +
+        `*Dirección:* ${address}%0A` +
+        `*Teléfono:* ${phone}%0A` +
+        `*Provincia:* ${province}%0A` +
+        `*Código Postal:* ${zipcode}%0A` +
+        `*Ciudad:* ${city}%0A` +
+        `*DNI:* ${dni}%0A` +
+        `*Descripción adicional:* ${details || 'N/A'}%0A%0A` +
+        `*Producto(s):*%0A` + carrito.map(item => `- ${item.titulo} (Cantidad: ${item.cantidad}, Precio: $${item.precio})`).join('%0A') +
+        `%0A%0A*ID de usuario:* ${userId}`;
+
+      // Redirige al enlace de WhatsApp con el mensaje generado
+      const whatsappLink = `https://wa.me/543548463642?text=${mensaje}`;
+      buttonShipment.href = whatsappLink;
+    });
+
+
+  });
+        </script>
+
+        
+  <!-- Footer End -->
+
+
+  <!-- Back to Top -->
+  <!-- <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a> -->
+
+  
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Contact Javascript File -->
+  <script src="mail/jqBootstrapValidation.min.js"></script>
+  <script src="mail/contact.js"></script>
+
+  <!-- Template Javascript -->
+  <!-- <script src="js/main.js"></script> -->
+  <script src="./cart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</body>
+
+</html>

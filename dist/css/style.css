@@ -9696,8 +9696,8 @@ a.text-dark:hover, a.text-dark:focus {
 .back-to-top {
   position: fixed;
   display: none;
-  right: 30px;
-  bottom: 30px;
+  right: 45px;
+  bottom: 90px;
   z-index: 11;
   animation: action 1s infinite alternate;
 }

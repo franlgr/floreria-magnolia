@@ -1,26 +1,33 @@
 const express = require('express');
-const path = require('path')
+const path = require('path');
 
 const app = express();
+const PORT = 6767;
 
-
-
-// Configurar la carpeta de archivos estáticos para servir los archivos de la aplicación Vue
+// Serve static files from the "dist" directory
 app.use(express.static(path.join(__dirname, 'dist')));
-// // app.use(express.static(path.join(__dirname, '../dist/Content')));
 
-// Configurar la ruta de la aplicación
+// Handle all other routes with index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'index.html'));
-//   });
 
-// Puerto en el que el servidor
-const port = process.env.PORT || 6767;
-
-// Iniciar el servidor
-app.listen(port, () => {
-  console.log(`Servidor escuchando en el puerto http://localhost:${port}`);
+// Use 0.0.0.0 to allow access from other devices on the network
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Access it on your local network at http://${getLocalIp()}:${PORT}`);
 });
+
+// Helper function to get the local IP address
+function getLocalIp() {
+  const os = require('os');
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const net of interfaces[name]) {
+      if (net.family === 'IPv4' && !net.internal) {
+        return net.address;
+      }
+    }
+  }
+  return 'localhost';
+}

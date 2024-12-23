@@ -41,47 +41,128 @@
 </head>
 
 <body>
-    
-<!-- Topbar Start -->
-<div class="container-fluid">
-    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-        <div class="col-lg-4">
-            <a href="/" class="text-decoration-none" style="font-size: 30px;">
-                <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
-                Magnolia tu florería
-            </a>
-        </div>
-        <div class="col-lg-4 col-6 text-left"></div>
-        <div class="col-lg-4 col-6 d-flex flex-column align-items-end">
-            <div class="d-flex align-items-center">
-                <a class="btn btn-square mx-2" target="_blank" href="https://instagram.com/magnolia.florece">
-                    <img style="width: 30px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
-                </a>
-                <a target="_blank" href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
-                    <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
-                </a>
-            </div>
-            <span class="text-right mt-2" style="font-size: 14px;">
-                1827 Neuquén Buenos Aires, Cdad. Autónoma de Buenos Aires
-            </span>
-        </div>
+    <style>
+    .logo-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: #f8f9fa;
+        border-bottom: 2px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-mobile a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .logo-mobile a img.logo-placeholder {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .logo-mobile .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-mobile .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .logo-mobile .social-icons a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-mobile .social-icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 780px) {
+        /* Estilos para dispositivos móviles */
+        .logo-mobile a img.logo-placeholder {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-mobile a strong {
+            font-size: 18px;
+        }
+
+        .logo-mobile .social-icons a {
+            width: 35px;
+            height: 35px;
+        }
+
+        .logo-mobile .social-icons img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    @media (min-width: 780px) {
+        /* Ajustes específicos para pantallas grandes */
+        .logo-mobile {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+        }
+
+        .logo-mobile a img.logo-placeholder {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-mobile a strong {
+            font-size: 24px;
+        }
+
+        .logo-mobile .social-icons a {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-mobile .social-icons img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+</style>
+
+<div class="logo-mobile">
+    <a href="/" class="text-decoration-none">
+        <img class="logo-placeholder" src="https://via.placeholder.com/50" alt="Logo Placeholder">
+        <strong style="font-size: 20px;">Plan Cheto</strong>
+    </a>
+    <div class="social-icons">
+        <a href="https://instagram.com/magnolia.florece" target="_blank">
+            <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="Instagram">
+        </a>
+        <a href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." target="_blank">
+            <img src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="WhatsApp">
+        </a>
     </div>
 </div>
-<!-- Topbar End -->
-
-<div class="logo-mobile col-lg-4">
-    <a href="/" class="text-decoration-none" style="font-size: 20px;">
-        <!-- <span class="h1 text-uppercase text-primary bg-success px-2">Florería</span>
-        <span class="h1 text-uppercase text-dark bg-pink px-2 ml-n1">Magnolia</span> -->
-        <img style="width: 100px;" src="./img/logo-magnolia.jpg" alt="">
-      Magnolia tu florería
-    </a>
-</div>
+        <!-- Topbar End -->
 
 <style>
-        .logo-mobile{
-        display: none;
-    }
 
   @media (max-width: 780px) {
     /* Estilos para dispositivos con un ancho máximo de 780px */
@@ -93,9 +174,7 @@
         cursor: pointer;
         margin: 10px;
     }
-    .logo-mobile{
-        display: block;
-    }
+
     .text-carrito-mobile{
         display: none;
     }
@@ -109,14 +188,16 @@
         <div class="row px-xl-5">
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
-                    <a class="breadcrumb-item text-dark" href="#">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item active">Shopping Cart</span>
+                    <a class="breadcrumb-item text-dark" href="/">Inicio</a>
+                    <!-- <a class="breadcrumb-item text-dark" href="#">Shop</a> -->
+                    <span class="breadcrumb-item active">Carrito</span>
                 </nav>
             </div>
         </div>
     </div>
     <!-- Breadcrumb End -->
+
+    
 
 
     <!-- Cart Start -->
@@ -126,10 +207,10 @@
                 <table class="table table-light table-borderless table-hover text-center mb-0">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Flores</th>
+                            <th>Producto</th>
                             <!-- <th>Price</th> -->
                             <th>Cantidad</th>
-                            <th>Total</th>
+                            <!-- <th>Total</th> -->
                             <th>Quitar</th>
                         </tr>
                     </thead>
@@ -187,9 +268,9 @@
                             <h5>Total</h5>
                             <h5>$160</h5>
                         </div>
-                        <button id="checkoutBtn" class="btn btn-block btn-success font-weight-bold my-3 py-2">
-                            <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
-                            Iniciar Compra</button>
+                        <a href="/shipment.html" style="color: black;"  class="btn btn-block btn-success font-weight-bold my-3 py-2">
+                            <img style="width: 30px; margin-right: 10px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F26%2F26786.png&f=1&nofb=1&ipt=e05043d9ab3caf28d072fc059accce31b618f5da9dfd6d64e045561ec11d5db2&ipo=images" alt="">
+                            Comprar</a>
                     </div>
                 </div>
             </div>
@@ -220,9 +301,6 @@ fila.innerHTML = `
 <img src="${producto.imagen}" alt="" style="width: 50px; height:80px;"> 
 <p style="padding: 5px">
 ${producto.titulo}
-<div>
-${producto.color}
-</div>
 </p>
 </td>
 
@@ -242,7 +320,7 @@ ${producto.color}
   </div>
 </div>
 </td>
-<td class="align-middle">$${producto.precio * producto.cantidad}</td>
+
 <td class="align-middle">
 <button class="btn btn-sm btn-danger btn-remove" data-index="${index}">
   <i class="fa fa-times"></i>
@@ -305,23 +383,23 @@ mostrarProductosEnTabla();
 
 // Reemplaza la parte que crea el botón "Proceed To Checkout" por este código
 document.getElementById('checkoutBtn').addEventListener('click', function() {
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-let mensaje = "Hola!:\n Detalles de mi pedido:\n\n";
-let total = 0;
+// const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+// let mensaje = "Hola!:\n Detalles de mi pedido:\n\n";
+// let total = 0;
 
-carrito.forEach(producto => {
-const subtotal = producto.precio * producto.cantidad;
-mensaje += `Tipo: ${producto.titulo}\n Color: ${producto.color}\nCantidad: ${producto.cantidad}\nSubtotal: $${subtotal}\n\n`;
-total += subtotal;
-});
+// carrito.forEach(producto => {
+// const subtotal = producto.precio * producto.cantidad;
+// mensaje += `Tipo: ${producto.titulo}\n Color: ${producto.color}\nCantidad: ${producto.cantidad}\nSubtotal: $${subtotal}\n\n`;
+// total += subtotal;
+// });
 
-mensaje += `Total: $${total}\n\nMuchas gracias! Espero aquí para más instrucciones.`;
+// mensaje += `Total: $${total}\n\nMuchas gracias! Espero aquí para más instrucciones.`;
 
-const numeroWhatsApp = "541171826432";//https://wa.me/541171826432
-const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+// const numeroWhatsApp = "541171826432";//https://wa.me/541171826432
+// const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
 
 // Abrir la URL de WhatsApp
-window.open(urlWhatsApp, '_blank');
+document.loaction.href= '/shipment.html';
 });
 
     </script>
@@ -331,107 +409,67 @@ window.open(urlWhatsApp, '_blank');
 
 
 
-    <!-- Footer Start -->
+ <!-- Footer Start -->
 
 
-    <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">Contáctanos</h5>
-                <p class="mb-4"> Un abrazo de naturaleza al corazón.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>1827 Neuquén Buenos Aires, Cdad. Autónoma de Buenos Aires</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>magnolia.tu.floreria@gmail.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+54 11 71826432
-                </p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-
-                <style>
-                    footer iframe {
-                        width: 190%;
-                        height: 250px;
-                   }
-
-                   @media (max-width: 780px) {
-                    /* Estilos para dispositivos con un ancho máximo de 780px */
-                    footer iframe {
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-
-
-                </style>
-<footer>
-    <div class="footer-content">
-        <h3>Encuéntranos aquí:</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!4v1729099883883!6m8!1m7!1s0Jaz1nc_VOzh0TGZOoPB3Q!2m2!1d-34.61598236161416!2d-58.45887938067453!3f188.65952450420184!4f-3.382048004979012!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</footer>
-                    </div>
-                    <div class="col-md-4 mb-5">
-
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <!-- <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p> -->
-                        <form action="">
-
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Síguenos en Instagram</h6>
-                        <div class="d-flex">
-                            <!-- <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a> -->
-                            <a class="btn btn-square" _blank target="_blank" href="https://instagram.com/magnolia.florece">
-                                <img style="width: 30px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
-                            </a>
-                            <a href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
-                                <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
-                            </a>
-                        </div>
+ <div class="container-fluid bg-dark text-secondary mt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-8 col-md-12">
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <h6 class="text-secondary text-uppercase mt-4 mb-3">CONTACTOS</h6>
+                    <div class="d-flex">
+                        <a class="btn btn-square" target="_blank" href="https://instagram.com/magnolia.florece">
+                            <img style="width: 30px;" src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="">
+                        </a>
+                        <a href="https://wa.me/5491127786432?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20con%20los%20siguientes%20detalles." class="ml-2">
+                            <img style="width: 30px;" src="https://www.svgrepo.com/show/452133/whatsapp.svg" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary" href="#">floreria-magnolia.picai.app</a>. All Rights Reserved. Designed
-                    by 
-                    <a class="text-primary" href="#">ARMORTEMPLATE.COM</a>
-                </p>
-                <a href="https://www.linkedin.com/in/francisco-grillo-518a2125a/" target="_blank" style="display: inline-block; text-decoration: none; color: inherit;">
-                    <div style="width: 100px; height: 24px; background-color: #0077b5; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
-                      <span style="color: white; font-size: 14px; font-family: Arial, sans-serif; font-weight: bold;">LinkedIn</span>
-                    </div>
-                  </a>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
-            </div>
+    </div>
+    <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="col-md-6 px-xl-0 mb-3 mb-md-0">
+            <p class="mb-md-0 text-center text-md-left text-secondary">
+                &copy; <a class="text-primary" href="#">www.plancheto.com</a> 2024<br>
+                <a class="text-primary" href="#">www.argentinaoferta.com</a><br>
+                <a class="text-primary" href="#">www.armortemplate.com</a><br>
+                <a class="text-primary" href="#">www.picoai.app</a>
+            </p>
+            <a href="https://www.linkedin.com/in/francisco-grillo-518a2125a/" target="_blank" style="display: inline-block; text-decoration: none; color: inherit;">
+                <div style="width: 100px; height: 24px; background-color: #0077b5; border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-size: 14px; font-family: Arial, sans-serif; font-weight: bold;">LinkedIn (Dev)</span>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 px-xl-0 text-center text-md-right">
+            <img style="width: 200px;" class="img-fluid" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pisostateis.com.br%2Fwp-content%2Fuploads%2F2020%2F04%2Fmercadopago.png&f=1&nofb=1&ipt=5ac67512e5f4b5598819af96fc63f089d2a2fbbecac574603620709ad66f43bf&ipo=images" alt="">
         </div>
     </div>
-    <!-- Footer End -->
+</div>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+  <!-- Footer End -->
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <!-- Back to Top -->
+  <!-- <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a> -->
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Contact Javascript File -->
+  <script src="mail/jqBootstrapValidation.min.js"></script>
+  <script src="mail/contact.js"></script>
+
+  <!-- Template Javascript -->
+  <!-- <script src="js/main.js"></script> -->
+  <script src="./cart.js"></script>
 </body>
 
 </html>
