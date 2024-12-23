@@ -180,7 +180,7 @@ hr {
 
 <body>
     <style>
-    .logo-mobile {
+.logo-mobile {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -198,8 +198,8 @@ hr {
     }
 
     .logo-mobile a img.logo-placeholder {
-        width: 50px;
-        height: 50px;
+      width: 145px;
+      height: 110px;
         border-radius: 50%;
         margin-right: 10px;
     }
@@ -236,8 +236,8 @@ hr {
     @media (max-width: 780px) {
         /* Estilos para dispositivos móviles */
         .logo-mobile a img.logo-placeholder {
-            width: 40px;
-            height: 40px;
+          width: 145px;
+          height: 110px;
         }
 
         .logo-mobile a strong {
@@ -259,13 +259,13 @@ hr {
         /* Ajustes específicos para pantallas grandes */
         .logo-mobile {
             max-width: 1200px;
-            margin: 0 auto;
+         
             padding: 15px 30px;
         }
 
         .logo-mobile a img.logo-placeholder {
-            width: 60px;
-            height: 60px;
+          width: 145px;
+          height: 110px;
         }
 
         .logo-mobile a strong {
@@ -285,9 +285,9 @@ hr {
 </style>
 
 <div class="logo-mobile">
-    <a href="/" class="text-decoration-none">
-        <img class="logo-placeholder" src="https://via.placeholder.com/50" alt="Logo Placeholder">
-        <strong style="font-size: 20px;">Plan Cheto</strong>
+    <a href="#" class="text-decoration-none">
+        <img class="logo-placeholder" src="./img/logoblancogorro.jpg" alt="Logo Placeholder">
+        <strong style="font-size: 15px;">Nuevo!</strong>
     </a>
     <div class="social-icons">
         <a href="https://instagram.com/magnolia.florece" target="_blank">
@@ -342,7 +342,7 @@ hr {
             <h1>Agregar dirección.</h1>
             <p>Por favor, ingresa los datos de entrega.</p>
             <div style="color: black;">
-                <input  type="checkbox" name="" id="">
+                <input  type="checkbox" name="" id="toggle-checkbox">
                 Voy a retirar yo.
             </div>
             <div style="margin-top: 5px;">
@@ -439,7 +439,7 @@ hr {
             <br>
             <p style="text-align: center;">Ó</p>
             <br>
-            <button style="padding-bottom: 10px;" class="button">
+            <button id="transfer-button" style="padding-bottom: 10px;" class="button">
                    Transferencia
             <img style="width: 20px; margin-left: 10px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2015%2F04%2Fwhatsapp-logo-icone.png&f=1&nofb=1&ipt=f059d659e4660559a6b2b9e8706357c343a9cf0a7e05ed496cf6372b91a57e0c&ipo=images" alt="">
             </button>
@@ -464,6 +464,26 @@ hr {
             </div>
           </div>
     </div>
+
+
+    <script>
+      const checkbox = document.getElementById('toggle-checkbox');
+      const formShip = document.getElementById('form-shipp');
+      const buttonsPay = document.getElementById('buttons-pay');
+      const buttonShipp = document.getElementById('button-shippment');
+
+      checkbox.addEventListener('change', () => {
+          if (checkbox.checked) {
+              formShip.style.display = 'none';
+              buttonsPay.style.display = 'block';
+              buttonShipp.style.display = 'none';
+          } else {
+              formShip.style.display = 'block';
+              buttonsPay.style.display = 'none';
+              buttonShipp.style.display = 'block';
+          }
+      });
+  </script>
 
 
     <script>
@@ -559,6 +579,36 @@ hr {
   });
         </script>
 
+
+
+<script>
+  document.getElementById('transfer-button').addEventListener('click', () => {
+      // Número de WhatsApp
+      const whatsappNumber = '543548551382';
+
+      // Datos del carrito y usuario desde localStorage
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      // const userId = localStorage.getItem('userId');
+
+      // Construir el mensaje del pedido
+      let mensaje = `Hola, me comunico desde www.plancheto.com para hacer el siguiente pedido:\n\nRetiro yo.\n\n`;
+      let totalGeneral = 0;
+
+      carrito.forEach((item, index) => {
+          const subtotal = item.precio * item.cantidad;
+          totalGeneral += subtotal;
+          mensaje += `#${index + 1} - ${item.titulo}\nPrecio: $${item.precio}\nCantidad: ${item.cantidad}\nSubtotal: $${subtotal}\n\n`;
+      });
+
+      mensaje += `Total: $${totalGeneral}`;
+
+      // Codificar mensaje para la URL de WhatsApp
+      const mensajeCodificado = encodeURIComponent(mensaje);
+
+      // Redirigir a WhatsApp
+      window.location.href = `https://wa.me/${whatsappNumber}?text=${mensajeCodificado}`;
+  });
+</script>
         
   <!-- Footer End -->
 

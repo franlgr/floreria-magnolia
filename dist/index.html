@@ -43,25 +43,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const getOrCreateUserId = () => {
-    let userId = localStorage.getItem("userId");
 
-    if (!userId) {
-      // Generar un nuevo UUID
-      userId = crypto.randomUUID();
-      localStorage.setItem("userId", userId);
-    }
-
-    return userId;
-  };
-
-  const userId = getOrCreateUserId();
-  console.log("ID único de usuario conectado:", userId);
-});
-
-</script>
 <style>
   body {
 font-family: "Edu AU VIC WA NT Hand";
@@ -907,6 +889,26 @@ font-style: normal;
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="./cart.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      const getOrCreateUserId = () => {
+        let userId = localStorage.getItem("userId");
+    
+        if (!userId) {
+          // Generar un nuevo UUID
+          userId = crypto.randomUUID();
+          localStorage.setItem("userId", userId);
+        }
+    
+        return userId;
+      };
+    
+      const userId = getOrCreateUserId();
+      console.log("ID único de usuario conectado:", userId);
+    });
+    
+    </script>
 </body>
 
 </html>
