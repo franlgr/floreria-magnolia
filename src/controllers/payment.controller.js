@@ -1,13 +1,13 @@
-import mercadopage from "mercadopago";
+import mercadopago from "mercadopago";
 import { MERCADOPAGO_API_KEY } from "../config.js";
 
 export const createOrder = async (req, res) => {
-  mercadopage.configure({
+  mercadopago.configure({
     access_token: MERCADOPAGO_API_KEY,
   });
 
   try {
-    const result = await mercadopage.preferences.create({
+    const result = await mercadopago.preferences.create({
       items: [
         {
           title: "Laptop",
