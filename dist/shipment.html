@@ -440,45 +440,9 @@ hr {
             <p style="text-align: center;">Ó</p>
             <br>
             <button id="transfer-button" style="padding-bottom: 10px;" class="button">
-              Transferencia
-              <img style="width: 20px; margin-left: 10px" 
-                   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2015%2F04%2Fwhatsapp-logo-icone.png&f=1&nofb=1&ipt=f059d659e4660559a6b2b9e8706357c343a9cf0a7e05ed496cf6372b91a57e0c&ipo=images" 
-                   alt="">
-          </button>
-          
-          <script>
-              document.getElementById("transfer-button").addEventListener("click", function() {
-                  // Número de WhatsApp
-                  const whatsappNumber = "543548551382";
-                  
-                  // Obtener datos del carrito desde localStorage
-                  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-                  let mensaje = "Hola, me comunico desde plancheto.com. Quisiera realizar el siguiente pedido:\n\n";
-          
-                  // Iterar por los productos del carrito y armar el mensaje
-                  carrito.forEach((producto, index) => {
-                      const titulo = producto.titulo || "Producto";
-                      const cantidad = producto.cantidad || 1;
-                      const precio = producto.precio || 0;
-                      const total = cantidad * precio;
-          
-                      mensaje += `${index + 1}. ${titulo}\n`;
-                      mensaje += `   Cantidad: ${cantidad}\n`;
-                      mensaje += `   Precio unitario: $${precio}\n`;
-                      mensaje += `   Total: $${total}\n\n`;
-                  });
-          
-                  // Agregar información adicional
-                  mensaje += "Método de pago: Transferencia Bancaria\n";
-          
-                  // Convertir el mensaje a un formato URL
-                  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
-          
-                  // Abrir WhatsApp en una nueva pestaña
-                  window.open(url, "_blank");
-              });
-          </script>
-          
+                   Transferencia
+            <img style="width: 20px; margin-left: 10px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogodownload.org%2Fwp-content%2Fuploads%2F2015%2F04%2Fwhatsapp-logo-icone.png&f=1&nofb=1&ipt=f059d659e4660559a6b2b9e8706357c343a9cf0a7e05ed496cf6372b91a57e0c&ipo=images" alt="">
+            </button>
             </div>
 
             <!-- Botones de generar y calcular -->
