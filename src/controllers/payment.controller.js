@@ -3,7 +3,7 @@ import { MERCADOPAGO_API_KEY } from "../config.js";
 
 export const createOrder = async (req, res) => {
   mercadopago.configure({
-    access_token: MERCADOPAGO_API_KEY,
+    access_token: 'APP_USR-67613722-9e36-4871-a97c-0e4d66fdede8',
   });
 
   try {
