@@ -1,5 +1,9 @@
-import { MercadoPago, Payment } from "mercadopago";
-import { MERCADOPAGO_API_KEY } from "../config.js";
+// import { MercadoPago, Payment } from "mercadopago";
+// import { MERCADOPAGO_API_KEY } from "../config.js";
+
+const { MercadoPago, Payment } = require("mercadopago");
+const { MERCADOPAGO_API_KEY } = require("../config.js");
+
 
 const client = new MercadoPago({ accessToken: MERCADOPAGO_API_KEY });
 const payments = new Payment(client);
