@@ -1,16 +1,22 @@
 {
-  "name": "online-shop-website-template",
+  "name": "nodejs-mercadopago",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "repository": "git@github.com:franlgr/floreria-magnolia.git",
-  "author": "franlgr <grilfran90@gmail.com>",
-  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2",
-    "fs": "^0.0.1-security",
-    "mongoose": "^8.8.4",
-    "multer": "^1.4.5-lts.1",
-    "path": "^0.12.7",
-    "uuid": "^11.0.3"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mercadopago": "^1.5.16",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
