@@ -20,7 +20,7 @@ app.use(morgan("dev"));
 app.use(paymentRoutes);
 
 // Servir archivos estáticos desde "src/public"
-const publicPath = path.resolve("src/public");
+const publicPath = path.resolve("/public");
 app.use(express.static(publicPath));
 
 // Ruta para servir el archivo index.html en "/"
