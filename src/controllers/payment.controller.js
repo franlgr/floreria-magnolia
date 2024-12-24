@@ -2,7 +2,7 @@
 
 
 
-import mercadopage from "mercadopago";
+import mercadopago from "mercadopago";
 import { MERCADOPAGO_API_KEY } from "../config.js";
 
 export const createOrder = async (req, res) => {
@@ -11,7 +11,7 @@ export const createOrder = async (req, res) => {
   });
 
   try {
-    const result = await mercadopage.preferences.create({
+    const result = await mercadopago.preferences.create({
       items: [
         {
           title: "Laptop",
@@ -42,7 +42,7 @@ export const receiveWebhook = async (req, res) => {
     const payment = req.query;
     console.log(payment);
     if (payment.type === "payment") {
-      const data = await mercadopage.payment.findById(payment["data.id"]);
+      const data = await mercadopago.payment.findById(payment["data.id"]);
       console.log(data);
     }
 
