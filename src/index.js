@@ -29,9 +29,9 @@ app.get("/", (req, res) => {
 });
 
 // Servir otros archivos estáticos (como sw.js)
-app.get("/sw.js", (req, res) => {
-  res.sendFile(path.join(publicPath, "sw.js"));
-});
+// app.get("/sw.js", (req, res) => {
+//   res.sendFile(path.join(publicPath, "sw.js"));
+// });
 
 // Iniciar servidor
 app.listen(6767, () => {
