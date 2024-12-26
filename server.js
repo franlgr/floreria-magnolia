@@ -55,7 +55,7 @@ app.post("/create-order", async (req, res) => {
 
     const response = await mercadopago.preferences.create(preference);
     console.log(response.body.init_point)
-    res.json({ url: response.body.sandbox_init_point });
+    res.json({ url: response.body.init_point });
   } catch (error) {
 
     console.error("Error al crear la preferencia:", error);
