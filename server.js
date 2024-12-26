@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
 
 // Configurar Mercado Pago
 mercadopago.configure({
-  access_token: "APP_USR-131995419340909-122521-5f96c4268433dac257e1a251a4a7465f-537044860",
+  // access_token: "APP_USR-131995419340909-122521-5f96c4268433dac257e1a251a4a7465f-537044860",
+  access_token: "TEST-131995419340909-122521-e4df4c80aae13e2ff12acacb48accd61-537044860",
 });
 
 // Producto estático
@@ -54,7 +55,7 @@ app.post("/create-order", async (req, res) => {
 
     const response = await mercadopago.preferences.create(preference);
     console.log(response.body.init_point)
-    res.json({ url: response.body.init_point });
+    res.json({ url: response.body.sandbox_init_point });
   } catch (error) {
 
     console.error("Error al crear la preferencia:", error);
