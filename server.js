@@ -68,7 +68,7 @@ app.post("/webhook", async (req, res) => {
     if (type === "payment") {
       const { data } = await axios.get(`https://api.mercadopago.com/v1/payments/${id}`, {
         headers: {
-          Authorization: `Bearer TEST-053ba3b5-01b8-4d32-88ab-5c3cc4b81090`,
+          Authorization: `Bearer 92efce9f60832c8c5be22ed7d0cd25c35ea8b117a9458b237a8f68044bac7436`,
         },
       });
 
