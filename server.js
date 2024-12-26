@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mercadopago from "mercadopago";
 import path from "path";
+import axios from "axios";
 
 const app = express();
 app.use(bodyParser.json());
@@ -9,9 +10,6 @@ app.use(bodyParser.json());
 const publicPath = path.join(process.cwd(), "./src/dist");
 app.use(express.static(publicPath));
 
-
-
-///commmiittitiit
 // Ruta principal
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
@@ -32,10 +30,8 @@ const product = {
   quantity: 1,
 };
 
-
-
 // Endpoint para crear preferencia de pago
-app.post("/create_order", async (req, res) => {
+app.post("/create-order", async (req, res) => {
   try {
     const preference = {
       items: [
@@ -54,10 +50,10 @@ app.post("/create_order", async (req, res) => {
       },
       auto_return: "approved",
       notification_url: "https://plancheto.com/webhook",
-    }
+    };
 
     const response = await mercadopago.preferences.create(preference);
-    res.json({ id: response.body.id });
+    res.json({ url: response.body.init_point });
   } catch (error) {
     console.error("Error al crear la preferencia:", error);
     res.status(500).send("Error interno del servidor");
@@ -70,13 +66,18 @@ app.post("/webhook", async (req, res) => {
     const { type, id } = req.query;
 
     if (type === "payment") {
-      const payment = await mercadopago.payment.findById(id);
-      console.log("Notificación de pago recibida:", payment.body);
+      const { data } = await axios.get(`https://api.mercadopago.com/v1/payments/${id}`, {
+        headers: {
+          Authorization: `Bearer APP_USR-67613722-9e36-4871-a97c-0e4d66fdede8`,
+        },
+      });
 
-      if (payment.body.status === "approved") {
-        console.log("Pago aprobado para el ID:", payment.body.id);
+      console.log("Notificación de pago recibida:", data);
+
+      if (data.status === "approved") {
+        console.log("Pago aprobado para el ID:", data.id);
       } else {
-        console.log("Estado del pago:", payment.body.status);
+        console.log("Estado del pago:", data.status);
       }
     }
 

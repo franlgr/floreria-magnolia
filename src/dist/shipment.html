@@ -480,16 +480,19 @@ hr {
 
     <script>
       const checkoutButton = document.getElementById("mp-button-init");
-
+    
       checkoutButton.addEventListener("click", async () => {
-        const res = await fetch("https://plancheto.com/create-order", {
-          method: "POST",
-        });
-        const data = await res.json();
-        window.location.href = data.url;
+        try {
+          const res = await axios.post("https://plancheto.com/create-order");
+          const { url } = res.data;
+          window.location.href = url;
+        } catch (error) {
+          console.error("Error al crear la orden:", error);
+          alert("Hubo un problema al procesar tu orden. Por favor, intenta de nuevo.");
+        }
       });
-
     </script>
+    
 
 
     <script>
@@ -699,6 +702,8 @@ hr {
   <!-- <script src="js/main.js"></script> -->
   <script src="./cart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
 </body>
 
