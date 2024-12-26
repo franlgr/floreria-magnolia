@@ -24,20 +24,20 @@ mercadopago.configure({
 // Endpoint para crear preferencia de pago
 app.post("/create-order", async (req, res) => {
   try {
-    const { titulo, precio, cantidad } = req.body;
+    const { carrito } = req.body;
 
     // Valida los datos recibidos
-    if (!titulo || !precio || !cantidad) {
+    if (!carrito.titulo || !carrito.precio || !carrito.cantidad) {
       return res.status(400).json({ error: "Faltan datos en el cuerpo de la solicitud." });
     }
 
     const preference = {
       items: [
         {
-          title: titulo,
+          title: carrito.titulo,
           description:"www.plancheto.com", // Descripción opcional
-          unit_price: parseFloat(precio), // Asegura que sea un número
-          quantity: parseInt(cantidad, 10), // Asegura que sea un entero
+          unit_price: parseFloat(carrito.precio), // Asegura que sea un número
+          quantity: parseInt(carrito.cantidad, 10), // Asegura que sea un entero
           currency_id: "ARS", // Moneda predeterminada
         },
       ],
