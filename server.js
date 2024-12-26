@@ -25,6 +25,7 @@ mercadopago.configure({
 app.post("/create-order", async (req, res) => {
   try {
     const { carrito } = req.body;
+    console.log(carrito)
 
     // Valida los datos recibidos
     if (!carrito.titulo || !carrito.precio || !carrito.cantidad) {
