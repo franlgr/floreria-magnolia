@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 // Configurar Mercado Pago
 mercadopago.configure({
-  access_token: "APP_USR-67613722-9e36-4871-a97c-0e4d66fdede8",
+  access_token: "TEST-053ba3b5-01b8-4d32-88ab-5c3cc4b81090",
 });
 
 // Producto estático
@@ -68,7 +68,7 @@ app.post("/webhook", async (req, res) => {
     if (type === "payment") {
       const { data } = await axios.get(`https://api.mercadopago.com/v1/payments/${id}`, {
         headers: {
-          Authorization: `Bearer APP_USR-67613722-9e36-4871-a97c-0e4d66fdede8`,
+          Authorization: `Bearer TEST-053ba3b5-01b8-4d32-88ab-5c3cc4b81090`,
         },
       });
 
