@@ -40,6 +40,7 @@ app.post("/create-order", async (req, res) => {
           unit_price: carrito[0].precio, // Asegura que sea un número
           quantity: carrito[0].cantidad, // Asegura que sea un entero
           currency_id: "ARS", // Moneda predeterminada
+          picture_url: 'https://www.plancheto.com/img/logonegro.jpg'
         },
       ],
       back_urls: {
