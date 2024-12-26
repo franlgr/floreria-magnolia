@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprobante de Pago</title>
+</head>
+<body>
+  <h1>Comprobante de Pago</h1>
+  <div id="receipt">
+    <!-- Los datos se llenarán dinámicamente -->
+  </div>
+
+  <script>
+    // Recupera los datos del pago desde la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const paymentId = urlParams.get("payment_id");
+    const status = urlParams.get("status");
+    const paymentType = urlParams.get("payment_type");
+
+    // Recupera los datos del producto desde localStorage
+    const carrito = JSON.parse(localStorage.getItem("carrito"));
+
+    // Guarda el comprobante completo en localStorage
+    const receipt = {
+      paymentId,
+      status,
+      paymentType,
+      carrito,
+    };
+    localStorage.setItem("receipt", JSON.stringify(receipt));
+
+    // Muestra el comprobante en la página
+    const receiptDiv = document.getElementById("receipt");
+    receiptDiv.innerHTML = `
+      <p><strong>ID del Pago:</strong> ${paymentId}</p>
+      <p><strong>Estado:</strong> ${status}</p>
+      <p><strong>Tipo de Pago:</strong> ${paymentType}</p>
+      <p><strong>Producto:</strong> ${carrito[0].titulo}</p>
+      <p><strong>Cantidad:</strong> ${carrito[0].cantidad}</p>
+      <p><strong>Precio:</strong> $${carrito[0].precio}</p>
+    `;
+  </script>
+</body>
+</html>

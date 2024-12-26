@@ -42,11 +42,17 @@ app.post("/create-order", async (req, res) => {
           currency_id: "ARS", // Moneda predeterminada
         },
       ],
+      // back_urls: {
+      //   success: "https://plancheto.com/success",
+      //   failure: "https://plancheto.com/failure",
+      //   pending: "https://plancheto.com/pending",
+      // },
       back_urls: {
-        success: "https://plancheto.com/success",
-        failure: "https://plancheto.com/failure",
-        pending: "https://plancheto.com/pending",
+        success: "https://plancheto.com/payment-success",
+        failure: "https://plancheto.com/payment-failure",
+        pending: "https://plancheto.com/payment-pending",
       },
+      
       auto_return: "approved",
       notification_url: "https://plancheto.com/webhook",
     };
@@ -88,6 +94,28 @@ app.post("/webhook", async (req, res) => {
     res.sendStatus(500);
   }
 });
+
+app.get("/payment-success", async (req, res) => {
+  try {
+    const paymentId = req.query.payment_id;
+    const paymentStatus = req.query.status;
+    const paymentType = req.query.payment_type;
+
+    // Obtén más detalles del pago si es necesario
+    const { data } = await axios.get(`https://api.mercadopago.com/v1/payments/${paymentId}`, {
+      headers: {
+        Authorization: `Bearer APP_USR-131995419340909-122521-5f96c4268433dac257e1a251a4a7465f-537044860`,
+      },
+    });
+
+    // Renderiza una vista HTML
+    res.sendFile(path.join(publicPath, "success.html")); // Cambia según tu estructura
+  } catch (error) {
+    console.error("Error al manejar el éxito del pago:", error);
+    res.status(500).send("Hubo un problema al procesar el pago.");
+  }
+});
+
 
 // Iniciar servidor
 const PORT = 6767;
