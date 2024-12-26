@@ -53,9 +53,10 @@ app.post("/create-order", async (req, res) => {
     };
 
     const response = await mercadopago.preferences.create(preference);
-    console.log(response.data)
+    console.log(response)
     res.json({ url: response.init_point });
   } catch (error) {
+
     console.error("Error al crear la preferencia:", error);
     res.status(500).send("Error interno del servidor");
   }
