@@ -19,8 +19,8 @@ export const createOrder = async (req, res) => {
       notification_url: "https://plancheto.com/webhook",
       back_urls: {
         success: "http://plancheto.com/success",
-        // pending: "https://e720-190-237-16-208.sa.ngrok.io/pending",
-        // failure: "https://e720-190-237-16-208.sa.ngrok.io/failure",
+        pending: "http://plancheto.com/pending",
+        failure: "http://plancheto.com/failure",
       },
     });
 
