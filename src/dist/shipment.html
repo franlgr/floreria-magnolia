@@ -482,7 +482,7 @@ hr {
       const checkoutButton = document.getElementById("mp-button-init");
 
       checkoutButton.addEventListener("click", async () => {
-        const res = await fetch("/create-order", {
+        const res = await fetch("https://plancheto.com/create-order", {
           method: "POST",
         });
         const data = await res.json();
