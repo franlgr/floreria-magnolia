@@ -6,12 +6,9 @@ import path from "path";
 const app = express();
 app.use(bodyParser.json());
 
-const publicPath = path.join(process.cwd(), "dist");
+const publicPath = path.join(process.cwd(), "./src/dist");
 app.use(express.static(publicPath));
 
-
-
-///commmiittitiit
 // Ruta principal
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
@@ -32,10 +29,8 @@ const product = {
   quantity: 1,
 };
 
-
-
 // Endpoint para crear preferencia de pago
-app.post("/create_preference", async (req, res) => {
+app.post("/create-order", async (req, res) => {
   try {
     const preference = {
       items: [
@@ -54,10 +49,10 @@ app.post("/create_preference", async (req, res) => {
       },
       auto_return: "approved",
       notification_url: "https://plancheto.com/webhook",
-    }
+    };
 
     const response = await mercadopago.preferences.create(preference);
-    res.json({ id: response.body.id });
+    res.json({ url: response.body.init_point });
   } catch (error) {
     console.error("Error al crear la preferencia:", error);
     res.status(500).send("Error interno del servidor");
