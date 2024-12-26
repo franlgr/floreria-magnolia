@@ -5,6 +5,14 @@ import mercadopago from "mercadopago";
 const app = express();
 app.use(bodyParser.json());
 
+const publicPath = path.join(process.cwd(), "public");
+app.use(express.static(publicPath));
+
+// Ruta principal
+app.get("/", (req, res) => {
+  res.sendFile(path.join(publicPath, "index.html"));
+});
+
 // Configurar Mercado Pago
 mercadopago.configure({
   access_token: "APP_USR-67613722-9e36-4871-a97c-0e4d66fdede8",
@@ -19,6 +27,8 @@ const product = {
   currency: "USD",
   quantity: 1,
 };
+
+
 
 // Endpoint para crear preferencia de pago
 app.post("/create_preference", async (req, res) => {
