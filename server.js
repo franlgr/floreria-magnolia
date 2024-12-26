@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 // Configurar Mercado Pago
 mercadopago.configure({
-  access_token: "TEST-053ba3b5-01b8-4d32-88ab-5c3cc4b81090",
+  access_token: "92efce9f60832c8c5be22ed7d0cd25c35ea8b117a9458b237a8f68044bac7436",
 });
 
 // Producto estático
