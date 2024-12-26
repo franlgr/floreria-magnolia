@@ -33,7 +33,7 @@ const product = {
 
 
 // Endpoint para crear preferencia de pago
-app.post("/create_preference", async (req, res) => {
+app.post("/create_order", async (req, res) => {
   try {
     const preference = {
       items: [
