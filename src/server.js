@@ -6,7 +6,7 @@ import path from "path";
 const app = express();
 app.use(bodyParser.json());
 
-const publicPath = path.join(process.cwd(), "public");
+const publicPath = path.join(process.cwd(), "./public");
 app.use(express.static(publicPath));
 
 // Ruta principal
