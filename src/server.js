@@ -74,7 +74,7 @@ app.post("/webhook", async (req, res) => {
 });
 
 // Iniciar servidor
-const PORT = 3000;
+const PORT = 6767;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
