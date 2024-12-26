@@ -490,8 +490,8 @@ hr {
             return;
           }
     
-          // Envía el carrito al servidor
-          const res = await axios.post("https://plancheto.com/create-order", carrito);
+          // Envía el carrito al servidor envuelto en un objeto con la clave `carrito`
+          const res = await axios.post("https://plancheto.com/create-order", { carrito });
           const { url } = res.data;
     
           // Redirige al cliente a la URL del checkout
@@ -502,6 +502,7 @@ hr {
         }
       });
     </script>
+    
     
     
 
