@@ -21,27 +21,24 @@ mercadopago.configure({
   // access_token: "TEST-131995419340909-122521-e4df4c80aae13e2ff12acacb48accd61-537044860",
 });
 
-// Producto estático
-const product = {
-  id: "12345",
-  title: "Producto Estático",
-  description: "Descripción del producto estático",
-  price: 100.0,
-  currency: "USD",
-  quantity: 1,
-};
-
 // Endpoint para crear preferencia de pago
 app.post("/create-order", async (req, res) => {
   try {
+    const { titulo, precio, cantidad } = req.body;
+
+    // Valida los datos recibidos
+    if (!titulo || !precio || !cantidad) {
+      return res.status(400).json({ error: "Faltan datos en el cuerpo de la solicitud." });
+    }
+
     const preference = {
       items: [
         {
-          title: product.title,
-          description: product.description,
-          unit_price: product.price,
-          quantity: product.quantity,
-          currency_id: product.currency,
+          title: titulo,
+          description:"www.plancheto.com", // Descripción opcional
+          unit_price: parseFloat(precio), // Asegura que sea un número
+          quantity: parseInt(cantidad, 10), // Asegura que sea un entero
+          currency_id: "ARS", // Moneda predeterminada
         },
       ],
       back_urls: {

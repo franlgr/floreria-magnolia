@@ -477,14 +477,24 @@ hr {
           </div>
     </div>
 
-
     <script>
       const checkoutButton = document.getElementById("mp-button-init");
     
       checkoutButton.addEventListener("click", async () => {
         try {
-          const res = await axios.post("https://plancheto.com/create-order");
+          // Obtiene el carrito desde localStorage
+          const carrito = JSON.parse(localStorage.getItem("carrito"));
+    
+          if (!carrito) {
+            alert("No hay productos en el carrito.");
+            return;
+          }
+    
+          // Envía el carrito al servidor
+          const res = await axios.post("https://plancheto.com/create-order", carrito);
           const { url } = res.data;
+    
+          // Redirige al cliente a la URL del checkout
           window.location.href = url;
         } catch (error) {
           console.error("Error al crear la orden:", error);
@@ -492,6 +502,7 @@ hr {
         }
       });
     </script>
+    
     
 
 
