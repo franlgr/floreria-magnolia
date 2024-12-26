@@ -28,17 +28,17 @@ app.post("/create-order", async (req, res) => {
     console.log(carrito[0])
 
     // Valida los datos recibidos
-    if (!carrito.titulo || !carrito.precio || !carrito.cantidad) {
+    if (!carrito[0].titulo || !carrito[0].precio || !carrito[0].cantidad) {
       return res.status(400).json({ error: "Faltan datos en el cuerpo de la solicitud." });
     }
 
     const preference = {
       items: [
         {
-          title: carrito.titulo,
+          title: carrito[0].titulo,
           description:"www.plancheto.com", // Descripción opcional
-          unit_price: carrito.precio, // Asegura que sea un número
-          quantity: carrito.cantidad, // Asegura que sea un entero
+          unit_price: carrito[0].precio, // Asegura que sea un número
+          quantity: carrito[0].cantidad, // Asegura que sea un entero
           currency_id: "ARS", // Moneda predeterminada
         },
       ],
