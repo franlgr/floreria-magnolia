@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mercadopago from "mercadopago";
+import path from "path";
 
 const app = express();
 app.use(bodyParser.json());
