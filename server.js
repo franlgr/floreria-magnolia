@@ -6,15 +6,13 @@ import path from "path";
 const app = express();
 app.use(bodyParser.json());
 
-const publicPath = path.join(process.cwd(), "./src/dist");
-app.use(express.static(publicPath));
 
+app.use(express.static(path.join(__dirname, './src/dist')));
+// // app.use(express.static(path.join(__dirname, '../dist/Content')));
 
-
-///commmiittitiit
-// Ruta principal
-app.get("/", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
+// RUTAS CONFIG FILTER
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Configurar Mercado Pago
