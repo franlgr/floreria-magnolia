@@ -36,8 +36,8 @@ app.post("/create-order", async (req, res) => {
         {
           title: carrito.titulo,
           description:"www.plancheto.com", // Descripción opcional
-          unit_price: parseFloat(carrito.precio), // Asegura que sea un número
-          quantity: parseInt(carrito.cantidad, 10), // Asegura que sea un entero
+          unit_price: carrito.precio, // Asegura que sea un número
+          quantity: carrito.cantidad, // Asegura que sea un entero
           currency_id: "ARS", // Moneda predeterminada
         },
       ],
