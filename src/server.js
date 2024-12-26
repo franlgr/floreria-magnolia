@@ -1,14 +1,14 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mercadopago = require("mercadopago");
+import express from "express";
+import bodyParser from "body-parser";
+import mercadopago from "mercadopago";
+
+const app = express();
+app.use(bodyParser.json());
 
 // Configurar Mercado Pago
 mercadopago.configure({
   access_token: "APP_USR-67613722-9e36-4871-a97c-0e4d66fdede8",
 });
-
-const app = express();
-app.use(bodyParser.json());
 
 // Producto estático
 const product = {
@@ -40,7 +40,7 @@ app.post("/create_preference", async (req, res) => {
       },
       auto_return: "approved",
       notification_url: "https://plancheto.com/webhook",
-    };
+    }
 
     const response = await mercadopago.preferences.create(preference);
     res.json({ id: response.body.id });
