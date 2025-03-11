@@ -18,7 +18,7 @@ app.get('*', (req, res) => {
 //   });
 
 // Puerto en el que el servidor
-const port = process.env.PORT || 6767;
+const port = process.env.PORT || 6060;
 
 // Iniciar el servidor
 app.listen(port, () => {
